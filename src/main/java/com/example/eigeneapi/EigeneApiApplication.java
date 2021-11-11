@@ -25,4 +25,12 @@ public class EigeneApiApplication {
                 return new Greeting(counter.incrementAndGet(), String.format(template, name));
             }
     }
+
+   // public String createRecipeTitle(@RequestBody String recipeTitle) {
+
+       // Recipe recipe = new Recipe (recipeTitle);
+
+   // }
+
+
 }
