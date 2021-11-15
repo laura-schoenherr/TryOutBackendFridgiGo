@@ -10,7 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 public class DataBase {
 
     //Diese Funktion persistiert ein ihr übergebenes Objekt:
-    public static void Persist(Object Eingabe){
+    public static String Persist(Object Eingabe){
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
 
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -21,10 +21,11 @@ public class DataBase {
         session.persist(Eingabe);
         session.flush();
         session.close();
+        return "persistence successfully done";
     }
 
-    /*Diese Funktion liest das Objekt mit der ihr übergebenen id ein und gibt es als "Student"-Objekt aus:
-    public static Student CallStudentById(Integer input){
+    //Diese Funktion liest das Objekt mit der ihr übergebenen id ein und gibt es als "Recipe"-Objekt aus:
+    public static Recipe CallRecipeById(Integer input){
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
 
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -33,13 +34,13 @@ public class DataBase {
 
 
         session.beginTransaction();
-        Student student = session.load(Student.class, input.longValue());
+        Recipe recipe = session.load(Recipe.class, input.longValue());
         session.flush();
-        return student;
+        return recipe;
     }
 
     //Diese Funktion updatet das ihr übergebene Objekt:
-    public static void EvictAndMerge(Object objekt, Integer id){
+    public static void EvictAndMerge(Object object, Integer id){
         StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure().build();
 
         Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
@@ -48,11 +49,11 @@ public class DataBase {
 
 
         session.beginTransaction();
-        session.evict(session.load(Student.class, id.longValue()));
+        session.evict(session.load(Recipe.class, id.longValue()));
         session.flush();
-        session.merge(objekt);
+        session.merge(object);
         session.flush();
         session.close();
-    }*/
+    }
 
 }

@@ -15,6 +15,7 @@
     <description>EigeneAPI</description>
     <properties>
         <java.version>11</java.version>
+        <keycloak.version>15.0.2</keycloak.version>
     </properties>
     <dependencies>
         <dependency>
@@ -48,6 +49,20 @@
         <artifactId>hibernate-jpa-2.1-api</artifactId>
         <version>1.0.2.Final</version>
     </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+
+        <!--keycloak dependency-->
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-boot-starter</artifactId>
+            <version>15.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>

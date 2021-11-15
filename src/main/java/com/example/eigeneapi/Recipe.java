@@ -3,7 +3,7 @@ package com.example.eigeneapi;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity //This tells Hibernate to make a table out of this class
 public class Recipe {
 
     private String recipeTitle;
@@ -26,5 +26,6 @@ public class Recipe {
 
     @Id
     public long getId() {return id;}
+
 
 }
