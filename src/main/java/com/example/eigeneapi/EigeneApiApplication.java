@@ -46,7 +46,7 @@ public class EigeneApiApplication {
 
         DataBase.Persist(SaveRecipe);
 
-        return;
+        return "reciped persisted";
     }
 
     /*Zum Verändern vorhandener Studenten;
@@ -66,7 +66,7 @@ public class EigeneApiApplication {
 
         //Updaten des zu verändernden Objekts:
         DataBase.EvictAndMerge(EingelesenesRezept, id);
-        return ;
+        return "recipe changed";
     }
 
     //Anzeigen eines Objekts mit einer bestimmten id:
